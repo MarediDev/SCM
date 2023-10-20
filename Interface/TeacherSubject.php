@@ -1,29 +1,183 @@
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Please Select your subject you teaching</h1>
-   <?php
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High School System</title>
+    <style>
+        /* Styling for the header */
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
 
-    if ($_GET['GradeChoice'] == "Grade 8")
-     {
-      ?>
-      <form class="" action="index.html" method="post">
-        <input type="checkbox" name="" value="Sepedi">  Sepedi Home Language  <br><br>
-        <input type="checkbox" name="" value="English">  English first Editional Language <br><br>
-        <input type="checkbox" name="" value="afrikaans">   afrikaans<br><br>
-        <input type="checkbox" name="" value="LO">   Life Orientation<br><br>
-        <input type="checkbox" name="" value="NS">   Natural Science<br><br>
-        <input type="checkbox" name="" value="HSS">   Human Social Science<br><br>
-        <input type="checkbox" name="" value="EMS">   Economic Management Science<br><br>
-        <button type="submit" name="Submit">Submit</button>
-      </form>
+        /* Styling for the navigation menu */
+        nav {
+            background: #333;
 
-     <?php
-    }
-    ?>
-  </body>
+            padding: 10px 0;
+            text-align: center;
+
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 20px;
+
+        }
+        nav li a{
+          text-decoration :none;
+          color:white;
+
+        }
+        nav li a:hover
+        {
+          color: blue;
+        }
+     /* dropdown styling*/
+     .dropdown {
+       position: relative;
+       display: inline-block;
+     }
+
+     /* Styling for the dropdown button */
+     .dropdown .dropbtn {
+       background-color: #3498db;
+       color: #fff;
+       padding: 10px;
+       width:200px;
+       border: none;
+       cursor: pointer;
+     }
+
+     /* Styling for the dropdown content */
+     .dropdown-content {
+       display: none;
+       position: absolute;
+       background-color: #f9f9f9;
+       min-width: 180px;
+       width:300px;"
+       border: 1px solid #ccc;
+       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+       z-index: 1;
+     }
+
+     /* Styling for the checkboxes within the dropdown content */
+     .dropdown-content input[type="checkbox"] {
+       margin: 5px;
+     }
+     /*style for two boxes*/
+     * {
+box-sizing: border-box;
+}
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 450px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+     /* Show the dropdown content when the dropdown button is clicked */
+     .dropdown:hover .dropdown-content {
+       display: block;
+     }
+        /* Styling for the login container */
+        .login-container {
+            text-align: center;
+            margin: 50px auto;
+            width: 300px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styling for the form elements */
+        input {
+            width: 280px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Styling for the footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to SCM</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="login-container">
+        <h2>Please Select your subject you teaching</h2>
+        <form class="" action="../Objects/TeacherclassObj.php" method="GET">
+
+            <div class="dropdown">
+              <!-- Dropdown button -->
+              <button class="dropbtn">Select Subjects </button>
+              <!-- Dropdown content -->
+              <div class="dropdown-content">
+                <!-- Checkboxes within the dropdown content -->
+                <label>Sepedi Home Language <input type="checkbox" name="" value="Sepedi">   </label>
+                <label>English first Editional Language<input type="checkbox" name="" value="English"> </label>
+                <label> afrikaans<input type="checkbox" name="" value="Afrikaans"><label>
+                <label>Life Orientation<input type="checkbox" name="" value="LO"><label>
+                  <label> Natural Science<input type="checkbox" name="" value="NS"><label>
+                    <label> Human Social Science<input type="checkbox" name="" value="HSS"><label>
+                      <label>Economic Management Science<input type="checkbox" name="" value="EMS"><label>
+
+
+                <button type="submit" name="submit">Submit</button>
+
+              </div>
+            </div>
+
+
+        </form>
+
+      </div>
+    <footer>
+        &copy; 2023 High School System. All rights reserved.
+    </footer>
+</body>
 </html>

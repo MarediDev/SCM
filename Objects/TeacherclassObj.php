@@ -6,10 +6,10 @@ if (isset($_GET['submit']))
  {
 
    $A = $_GET['A'];
-   //$B= $_GET['B'];
-   //$C = $_GET['C'];
-   //$D = $_GET['D'];
-   //$E= $_GET['E'];
+   $B= $_GET['B'];
+   $C = $_GET['C'];
+   $D = $_GET['D'];
+   $E= $_GET['E'];
 
 $school = $_GET['school'];
 $userID= $_GET['userID'];

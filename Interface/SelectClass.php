@@ -1,34 +1,135 @@
+<?php
+include_once '../DatabaseConnection/DBconnection.php';
+include_once '../Model/LearnerPK.php';
+include_once '../Control/learnersPK.php';
+?>
+
+
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Select grade block</h1>
-    <form class="" action="../Objects/GradeBlock.php" method="GET">
-      <select class="" name="BlockName">
-        <option value="none">Select Block</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">c</option>
-        <option value="D">D</option>
-        <option value="E">E</option>
-        <option value="F">F</option>
-        <option value="G">G</option>
-      </select><br><br>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High School System</title>
+    <style>
+        /* Styling for the header */
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
 
-      <input type="hidden" name="GradeName" value="<?php Echo $_GET['className']; ?>">
-      <input type="hidden" name="userID" value="<?php Echo $_GET['userID'] ;?>">
-      <input type="hidden" name="schoolID" value="<?php Echo $_GET['schoolID'] ;?>">
-      <input type="hidden" name="school" value="<?php Echo $_GET['school'] ;?>">
-      <input type="hidden" name="province" value="<?php Echo $_GET['province'] ;?>">
-      <input type="hidden" name="district" value="<?php Echo $_GET['district']; ?>">
-      <input type="hidden" name="circut" value="<?php Echo $_GET['circut'] ;?>">
-      <input type="hidden" name="parentID" value="<?php Echo $_GET['parentID'] ;?>">
-      <button type="submit" name="submit">submit</button>
-    </form>
+        /* Styling for the navigation menu */
+        nav {
+            background: #333;
+
+            padding: 10px 0;
+            text-align: center;
+
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 20px;
+
+        }
+        nav li a{
+          text-decoration :none;
+          color:white;
+
+        }
+        nav li a:hover
+        {
+          color: blue;
+        }
 
 
-  </body>
+        /* Styling for the login container */
+        .login-container {
+            text-align: center;
+            margin: 50px auto;
+            width: 300px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styling for the form elements */
+        input {
+            width: 280px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Styling for the footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to SCM</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="login-container">
+        <h2>Select Grade Block</h2>
+        <form class="" action="../Objects/GradeBlock.php" method="GET">
+          <select class=""   style="width: 280px; height: 30px;" name="BlockName">
+            <option value="none">Select Block</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">c</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+          </select><br><br>
+
+          <input type="hidden" name="GradeName" value="<?php Echo $_GET['className']; ?>">
+          <input type="hidden" name="userID" value="<?php Echo $_GET['userID'] ;?>">
+          <input type="hidden" name="schoolID" value="<?php Echo $_GET['schoolID'] ;?>">
+          <input type="hidden" name="school" value="<?php Echo $_GET['school'] ;?>">
+          <input type="hidden" name="province" value="<?php Echo $_GET['province'] ;?>">
+          <input type="hidden" name="district" value="<?php Echo $_GET['district']; ?>">
+          <input type="hidden" name="circut" value="<?php Echo $_GET['circut'] ;?>">
+          <input type="hidden" name="parentID" value="<?php Echo $_GET['parentID'] ;?>">
+          <button type="submit" name="submit">submit</button>
+        </form>
+      </div>
+    <footer>
+        &copy; 2023 High School System. All rights reserved.
+    </footer>
+</body>
 </html>
