@@ -16,4 +16,5 @@ class SelectedSchool extends Databaseconnect
       header("Location: ../Interface/SelectGrade.php?school=$school&userID=$userID&province=$province&district=$district&circut=$circut&parentInf=$parentInf");
      }
   }
+
 }

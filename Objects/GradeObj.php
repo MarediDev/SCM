@@ -16,7 +16,7 @@ if (!isset($_GET['submit']))
    $school  = $_GET['school'];
    $userID = $_GET['userID'];
    $schoolIDs = $schoolIDobj->GetSkoolIDs($school);
-   $schoolID = $schoolIDs['school_id'] ;
+   $schoolID = $schoolIDs['school_ID'] ;
    $province = $_GET['province'];
    $district = $_GET['district'];
    $circut = $_GET['circut'];

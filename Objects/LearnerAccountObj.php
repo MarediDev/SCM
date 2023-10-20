@@ -18,8 +18,24 @@ include_once '../Control/LearnerAccountCreating';
     $gender    = $_POST['gender'];
     $Rank      = $_POST['Rank'];
     $password  = $_POST['password'];
+    if (empty($firstName) || empty($surname) || empty($IDNumber) || empty($gender)|| empty($Rank)|| empty($password))
+    {
+      header("Location: ../Interface/LearnerAccountCreation.php?error=UserInput");
+    }elseif (strlen($IDNumber) < 13)
+     {
+    header("Location: ../Interface/LearnerAccountCreation.php?error=less");
+    }elseif(strlen($IDNumber)  > 13)
+    {
+      header("Location: ../Interface/LearnerAccountCreation.php?error=more");
+    }elseif($Gender=="NonGender")
+    {
+        header("Location: ../Interface/LearnerAccountCreation.php?error=Unselected");
+    }elseif($Rank == "NonRank")
+    {
+        header("Location: ../Interface/LearnerAccountCreation.php?error=Unselected");
+    }
 
-    if ($Rank == "Teacher")
+    elseif ($Rank == "Teacher")
      {
        $regDate =   TeacherAccounts::$Date = date("Y-m-d") ;;
        $regTime =TeacherAccounts::$Time =date("h:i:s:a");;
@@ -38,6 +54,5 @@ include_once '../Control/LearnerAccountCreating';
        exit();
 
      }
-
 
   }

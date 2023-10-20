@@ -14,7 +14,7 @@ class TeacherAccount extends Databaseconnect
      header("Location: ../index.php?signUp=RegUnsuccess");
     }else
     {
-      header("Location: ../index.php?signUp=success");
+      header("Location: ../Interface/TeacherProvinceSelection.php?IDno=$IDno&signUp=success");
     }
   }
 }

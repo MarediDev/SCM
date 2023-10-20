@@ -2,7 +2,7 @@
 
  include_once "../Model/SelectedSchool.php";
 
-class Selectedschools extends SelectedSchool
+class TeacherSelectedschools extends TeacherSelectedSchool
 {
 
    Private $school;
@@ -10,22 +10,22 @@ class Selectedschools extends SelectedSchool
    Private $province;
    Private $district;
    Private $circut;
-   Private $parentInf;
 
-   public function __construct($school,$userID,$province,$district,$circut,$parentInf)
+
+   public function __construct($school,$userID,$province,$district,$circut)
    {
      $this->school = $school;
      $this->userID = $userID;
      $this->province = $province;
      $this->district = $district;
      $this->circut =$circut;
-     $this->parentInf =$parentInf;
+
 
    }
-   public function selectedSkol()
+
+   public function TeacherSchools()
    {
-     $this->Selected($this->school,$this->userID, $this->province,$this->district,$this->circut, $this->parentInf);
+     $this->TeacherSchool($this->school,$this->userID, $this->province,$this->district,$this->circut);
    }
-
 
 }
